@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: www
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - mountPath: /var/www/nginx/html
+      name: git
+      readOnly: true
+  volumes:
+  - name: git
+    gitRepo:
+      repository: https://github.com/vipin2411/demohtml.git
