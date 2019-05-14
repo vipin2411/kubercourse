@@ -11,8 +11,9 @@ spec:
     ports:
     - containerPort: 80
     volumeMounts:
-    - mountPath: /var/www/nginx/html
+    - mountPath: /usr/share/nginx/html
       name: git
+      subPath: demohtml
       readOnly: true
   volumes:
   - name: git
